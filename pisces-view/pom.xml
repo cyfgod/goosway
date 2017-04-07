@@ -1,28 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <artifactId>pisces-view</artifactId>
-  <packaging>war</packaging>
+	<artifactId>pisces-view</artifactId>
+	<packaging>war</packaging>
 
-  <name>pisces-view</name>
-  <url>http://maven.apache.org</url>
+	<name>pisces-view</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <parent>
-  	<groupId>com.goosway.pisces</groupId>
-  	<version>0.0.1-SNAPSHOT</version>
-  	<artifactId>pisces</artifactId>
-  </parent>
+	<parent>
+		<groupId>com.goosway.pisces</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+		<artifactId>pisces</artifactId>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>birt-viewservlets</artifactId>
+			<version>4.6.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/viewservlets.jar</systemPath>
+		</dependency>
+	</dependencies>
+
 </project>
