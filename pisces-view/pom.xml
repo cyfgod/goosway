@@ -116,19 +116,21 @@
 									----------delete static resources end-------------
 								</echo>
 
-                                <echo>
-                                    ----------exec npm install-----------
-                                </echo>
-                                <exec executable="cmd" dir="${basedir}" osfamily="windows" failonerror="true">
-                                    <arg line="/c npm install"/>
-                                </exec>
-                                <exec executable="npm" dir="${basedir}" osfamily="unix" failonerror="true">
-                                    <arg line=" install"/>
-                                </exec>
-                                <echo>
-                                    ----------exec npm install end-----------------
-                                </echo>
-                                
+								<echo>
+									----------exec npm install-----------
+								</echo>
+								<exec executable="cmd" dir="${basedir}" osfamily="windows"
+									failonerror="true">
+									<arg line="/c npm install" />
+								</exec>
+								<exec executable="npm" dir="${basedir}" osfamily="unix"
+									failonerror="true">
+									<arg line=" install" />
+								</exec>
+								<echo>
+									----------exec npm install end-----------------
+								</echo>
+
 								<echo>
 									----------exec webpack-----------
 								</echo>
@@ -144,6 +146,20 @@
 									----------exec webpack end-----------------
 								</echo>
 
+								<echo>
+									----------exec copy static resources-----------
+								</echo>
+
+								<mkdir dir="${basedir}/src/main/webapp/js/lib" />
+								<copy todir="${basedir}/src/main/webapp/js/lib">
+									<fileset dir="${basedir}/src/main/js/lib">
+										<include name="**/*" />
+									</fileset>
+								</copy>
+
+								<echo>
+									----------exec copy static resources end-----------
+								</echo>
 							</tasks>
 						</configuration>
 						<goals>

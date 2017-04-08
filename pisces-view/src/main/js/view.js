@@ -4,8 +4,8 @@
  * @author Jerry Cheng
  */
 PSViewImpl = new Class({
-	Extends: PSViewBase,
-	
+	Extends : PSViewBase,
+
 	// Class constructor
 	initialize : function(container, options) {
 		// Initialize container
@@ -19,6 +19,10 @@ PSViewImpl = new Class({
 		};
 
 		this.setOptions(options);
+	},
+
+	run : function(callback) {
+		alert(this.container);
 	},
 
 	__end : null

@@ -3,12 +3,6 @@ var webpack = require('webpack');
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = {
-	// plugins
-	plugins : [ 
-	    new CommonsChunkPlugin('commons'),
-	    new CommonsChunkPlugin('commons'),
-	],
-
 	// entry config
 	entry : {
 		core : [
@@ -27,18 +21,23 @@ module.exports = {
 		    './src/main/js/base.js',
 		    './src/main/js/main.js',
 		    './src/main/js/view.js'
-		]
+		],
+		vendor : ['jquery']
 	},
 	// output config
 	output : {
 		path : path.join(__dirname, 'src/main/webapp/js'),
-		filename : '[name].js'
+		filename: "[name].js",
+		chunkFilename: "[name].[chunkHash:8].js"
 	},
+		
+	// plugins
+	plugins : [ 
+	    new CommonsChunkPlugin({
+            names: ['vendor']
+        })
+	],
 	
-	externals:{
-		'jquery':'jQuery'
-	},
-	    
 	module : {
 		// loader config
 		loaders : [ {
