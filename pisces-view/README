@@ -1,0 +1,13 @@
+How to create new war package?
+
+Steps:
+
+1、 Download the latest birt runtime build from eclipse.org;
+
+2、Unpack birt runtime build, and copy all files from <WebViewerExample> folder exclude WEB-INF/web.xml;
+
+3、Compare the birt runtime web.xml to current project web.xml. If required, please merge them;
+
+4、Install the latest NodeJS.
+
+5、Run maven package.
