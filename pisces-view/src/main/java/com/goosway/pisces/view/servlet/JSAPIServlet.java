@@ -29,10 +29,6 @@ public class JSAPIServlet extends HttpServlet implements IConstants
 	protected void doGet( HttpServletRequest req, HttpServletResponse resp )
 			throws ServletException, IOException
 	{
-		// Whether under debug mode
-		String debug = req.getParameter( PARAM_DEBUG );
-		req.setAttribute( "debug", ( "true".equalsIgnoreCase( debug ) ) );
-
 		// Set locale
 		req.setAttribute( "locale", ParameterAccessor.getLocale( req ) );
 

@@ -1,0 +1,28 @@
+{
+  "name": "pisces-view",
+  "version": "1.0.0",
+  "description": "Online reporting tool based on birt",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyfgod/goosway/tree/master/pisces-view"
+  },
+  "keywords": [
+    "pisces-view",
+    "pv",
+    "report",
+    "birt"
+  ],
+  "author": "Jerry Cheng",
+  "license": "Apache License 2.0",
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "jsx-loader": "^0.13.2",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.3.3"
+  }
+}
