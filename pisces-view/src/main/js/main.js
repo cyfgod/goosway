@@ -13,11 +13,6 @@ PSView = new Class({
 		// Initialize container
 		this.container = container;
 
-		// Initialize error handler
-		this.errorHandle = function(e) {
-			throw e;
-		};
-
 		// Initialize options
 		this.setOptions(options);
 	},
@@ -28,7 +23,7 @@ PSView = new Class({
 		require.ensure([], function(require) {
 			// load required resources
 			var react = require('react');
-			
+
 			// Create view instance
 			var options = that.__createOptions();
 			if (!that._view) {
@@ -53,6 +48,21 @@ PSView = new Class({
 			locale : this.locale,
 			errorHandler : this.errorHandler
 		};
+	},
+
+	// Check view options whether meet requirement
+	__checkOptions : function() {
+		if (!(this.reportDesign || this.reportDocument)) {
+			this.errorHandler(ERROR_INVALID_REPORT);
+			return false;
+		}
+
+		if (isNaN(this.page) || this.page <= 0) {
+			this.errorHandler(ERROR_INVALID_PAGE);
+			return false;
+		}
+
+		return true;
 	},
 
 	__end : null

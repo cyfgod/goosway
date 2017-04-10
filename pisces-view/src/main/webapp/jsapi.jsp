@@ -28,6 +28,6 @@
 	};
 })();
 
-<jsp:include page="./js/vendor.js"></jsp:include>
+<jsp:include page="./js/sweet.js"></jsp:include>
 <jsp:include page="./js/core.js"></jsp:include>
 <jsp:include page="./js/api.js"></jsp:include>

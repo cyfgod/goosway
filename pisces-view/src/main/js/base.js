@@ -5,16 +5,22 @@
  */
 PSViewBase = new Class({
 
+	// Initialize options
 	parameters : {},
+	page : 1,
+	
+	// Initialize error handler
+	errorHandle : function(e) {
+		throw e;
+	},
 
 	// Set options
 	setOptions : function(options) {
 		var that = this;
 		(options) ? Object.each(options, function(v, k) {
 			try {
-				var func = new Function("this.set" + k.capitalize() + "(" + v
-						+ ");");
-				func.call(that);
+				new Function("this.set" + k.capitalize() + "(" + v + ");")
+						.call(that);
 			} catch (e) {
 			}
 		}) : null;

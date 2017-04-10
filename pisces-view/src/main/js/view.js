@@ -4,8 +4,6 @@
  * @author Jerry Cheng
  */
 PSViewImpl = new Class({
-	Extends : PSViewBase,
-
 	// Class constructor
 	initialize : function(container, options) {
 		// Initialize container
@@ -14,11 +12,11 @@ PSViewImpl = new Class({
 			this.container = $('#' + this.container)[0];
 		}
 
-		this.errorHandler = function(e) {
-			throw e;
-		};
-
-		this.setOptions(options);
+		// Apply options
+		var that = this;
+		(options) ? $.each(options, function(k, v) {
+			that[k] = v;
+		}) : null;
 	},
 
 	run : function(callback) {

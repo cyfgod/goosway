@@ -22,19 +22,19 @@ module.exports = {
 		    './src/main/js/main.js',
 		    './src/main/js/view.js'
 		],
-		vendor : ['jquery']
+		sweet : ['jquery', './src/main/js/lib/jquery.i18n.properties.js']
 	},
 	// output config
 	output : {
 		path : path.join(__dirname, 'src/main/webapp/js'),
 		filename: "[name].js",
-		chunkFilename: "[name].[chunkHash:8].js"
+		chunkFilename: "[name].js"
 	},
 		
 	// plugins
 	plugins : [ 
 	    new CommonsChunkPlugin({
-            names: ['vendor']
+            names: ['sweet']
         })
 	],
 	
